@@ -1,21 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShootingScript : MonoBehaviour
 {
     public Rigidbody2D rb;
     public GameObject BulletPoint;
     public GameObject bullet;
+    public Slider Ammobar;
 
     
 
     public int ammo;
+    public int currentAmmo;
+    public int maxAmmo;
     public bool CanShoot;
 
     Vector3 cameraInitialPosition;
     public float shakeMagnitude = 0.04f, shakeTime = 0.5f;
     public Camera mainCamera;
+
+    public float ammoF;
 
     void Start()
     {
@@ -23,9 +29,14 @@ public class PlayerShootingScript : MonoBehaviour
         CanShoot = true;
     }
 
+
     // Update is called once per frame
     void Update()
     {
+
+        ammoF = (float)ammo;
+        Ammobar.value = ammo;
+
         if (Input.GetKeyDown(KeyCode.G) && ammo > 0 && CanShoot == true)
         {
             Instantiate(bullet, BulletPoint.transform.position, BulletPoint.transform.rotation);
@@ -43,9 +54,10 @@ public class PlayerShootingScript : MonoBehaviour
         if(ammo == 0)
         {
           
-            CanShoot = false;
             ammo = 5;
-            StartCoroutine(AmmoRegenerate());
+            AmmoRegen();
+            
+           
         }
        
         if(ammo > 5)
@@ -53,18 +65,20 @@ public class PlayerShootingScript : MonoBehaviour
             ammo = 5;
         }
 
-        
-      
+
+       
     }
 
-      public IEnumerator AmmoRegenerate()
+      public void AmmoRegen()
       {
-
-        yield return new WaitForSeconds(1.8f);
-       
-        CanShoot = true;
-       
+        if (ammo < 5)
+        {
+            ammoF += 1 * Time.deltaTime;
+          
+        }
       }
+
+     
 
     public void Shake()
     {
