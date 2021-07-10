@@ -52,7 +52,7 @@ public class Enemy1Script : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
-
+            ScoreScript.scoreValue += 1;
             Instantiate(DeathParticles, transform.position, transform.rotation);
             DeathParticles.Play();
             int randNum = Random.Range(0, 10);
