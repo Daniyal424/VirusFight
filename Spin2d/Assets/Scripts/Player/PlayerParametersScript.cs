@@ -17,7 +17,10 @@ public class PlayerParametersScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0)
+        {
+            GameObject.Find("LevelManager").GetComponent<LevelManager>().gameHasEnded = true;
+        }
     }
     
     float damageTime = 1.0f;
