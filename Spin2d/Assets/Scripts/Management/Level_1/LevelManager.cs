@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public bool gameHasEnded = false;
+    public bool GameRestarted = false;
     public GameObject GameOverScreen;
     public GameObject TD;
     public GameObject T1;
@@ -14,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public GameObject T3;
     public GameObject T4;
     private int TutorialCount = 0;
+  
     void OnEnable()
     {
         Debug.Log("OnEnable called");
@@ -21,10 +23,19 @@ public class LevelManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (GameObject.Find("TutorialHandler").GetComponent<TutorialHandler>().TutorialFinished == false)
+        {
+            Time.timeScale = 0f;
+            Debug.Log("tutorial");
+           
+        }
+        else
+        {
+            Destroy(TD);
+            GameRestarted = true;
+            Time.timeScale = 1;
+        }
         
-        Time.timeScale = 0f;
-        Debug.Log("tutorial");
-        Tutorial();
     }
     public void GameOver()
     {
@@ -46,7 +57,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && TutorialCount<=4)
+        if (Input.GetKeyDown(KeyCode.Space) && GameRestarted == false)
         {
             TutorialCount += 1;
         }
@@ -69,6 +80,7 @@ public class LevelManager : MonoBehaviour
         {
             TD.SetActive(false);
             Time.timeScale = 1;
+            GameObject.Find("TutorialHandler").GetComponent<TutorialHandler>().TutorialFinished = true;
         }
         if (gameHasEnded == true)
         {

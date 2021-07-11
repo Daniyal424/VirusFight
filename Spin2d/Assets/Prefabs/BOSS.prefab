@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7369699626462308453
+--- !u!1 &5627648808260196388
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,70 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1178496735337409900}
-  - component: {fileID: 4277054115927732032}
-  - component: {fileID: 8739072152914251541}
-  - component: {fileID: 2479922827939754480}
-  - component: {fileID: 9126587820413064255}
-  - component: {fileID: 1408984252861349299}
+  - component: {fileID: 5627648808260196411}
   m_Layer: 0
-  m_Name: Enemy1
-  m_TagString: Enemy1
+  m_Name: BossAim
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1178496735337409900
+--- !u!4 &5627648808260196411
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
+  m_GameObject: {fileID: 5627648808260196388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.388, y: 2.573, z: 2}
-  m_LocalScale: {x: 6, y: 6, z: 1}
+  m_LocalPosition: {x: 0, y: -0.357, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 5627648809111760370}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5627648809111760381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5627648809111760370}
+  - component: {fileID: 5627648809111760371}
+  - component: {fileID: 5627648809111760380}
+  - component: {fileID: 5627648809111760369}
+  - component: {fileID: 5627648809111760368}
+  m_Layer: 0
+  m_Name: BOSS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5627648809111760370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627648809111760381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.75, y: -2.85, z: -4.5431595}
+  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_Children:
+  - {fileID: 5627648808260196411}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4277054115927732032
+--- !u!212 &5627648809111760371
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
+  m_GameObject: {fileID: 5627648809111760381}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,82 +104,66 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfa1f9c3f36314ece985db5657d9ecea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13d0e2a661012428695c8311bb8b944c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.24, y: 10.24}
+  m_Size: {x: 0.54, y: 0.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &8739072152914251541
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 5
-  m_AngularDrag: 0
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &2479922827939754480
+--- !u!58 &5627648809111760380
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
+  m_GameObject: {fileID: 5627648809111760381}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0013572694, y: 0}
   serializedVersion: 2
-  m_Radius: 0.18
---- !u!114 &9126587820413064255
+  m_Radius: 0.25371274
+--- !u!114 &5627648809111760369
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
+  m_GameObject: {fileID: 5627648809111760381}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9aba3b36b5f708e47b37c6d2d5ef6f50, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f756ec91a1fe40e596bf7b7cab1eaea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  DeathParticles: {fileID: 6691854680416293912, guid: 7ae47c4de2ea84f79958615659cebac9,
+  speed: 6
+  E2_bullet_point: {fileID: 5627648808260196411}
+  E2bullet: {fileID: 4307441008619597607, guid: 0557bd659d484406db10af154c0a007e,
+    type: 3}
+  timestamp: 1
+  DeathParticles: {fileID: 6691854680416293912, guid: e7cb505e1611441f68e74e188b4678e0,
     type: 3}
   Ammo_Dropped: {fileID: 7881057636233378376, guid: a8d389b6658c3c94e8cff76831b6c03d,
     type: 3}
---- !u!95 &1408984252861349299
+  Health: 0
+--- !u!95 &5627648809111760368
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7369699626462308453}
+  m_GameObject: {fileID: 5627648809111760381}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 101f84addffa444d1ac0b4015d200261, type: 2}
+  m_Controller: {fileID: 9100000, guid: 664183ed25a4145449ec1e6815a014f5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

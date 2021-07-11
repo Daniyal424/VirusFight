@@ -19,7 +19,7 @@ public class PlayerParametersScript : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            GameObject.Find("LevelManager").GetComponent<LevelManager>().gameHasEnded = true;
+            GameObject.Find("LevelManager_2").GetComponent<LevelManager_2>().gameHasEnded = true;
         }
     }
     

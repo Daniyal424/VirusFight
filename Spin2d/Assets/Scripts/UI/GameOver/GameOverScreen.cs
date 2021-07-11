@@ -8,6 +8,7 @@ public class GameOverScreen : MonoBehaviour
     // Start is called before the first frame update
     public void Restart()
     {
+       
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void Start()
